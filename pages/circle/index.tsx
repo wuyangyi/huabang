@@ -21,7 +21,7 @@ CirclePage.getInitialProps = wrapper.getInitialPageProps((store) => async ({ req
 
 
     await Promise.all([
-        store.getState().common.circleType.length == 0 && store.dispatch(
+        store.dispatch(
             fetchCircleType({}),
         ),
 

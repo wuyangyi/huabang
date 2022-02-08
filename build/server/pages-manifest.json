@@ -1,7 +1,13 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
+  "/api/hello": "pages/api/hello.js",
+  "/circle/create": "pages/circle/create.js",
   "/circle": "pages/circle.js",
-  "/": "pages/index.js"
+  "/dynamic": "pages/dynamic.js",
+  "/helper/detail/[id]": "pages/helper/detail/[id].js",
+  "/helper/list": "pages/helper/list.js",
+  "/": "pages/index.js",
+  "/user/[id]": "pages/user/[id].js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js"
 }

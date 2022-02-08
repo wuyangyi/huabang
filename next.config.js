@@ -17,8 +17,8 @@ module.exports = {
   },
   excludeDefaultMomentLocales: true,
   env: {
-    API_HOST: process.env.PROD ? "http://www.helpweb.top/api/v1/" : 'http://local.helpweb.top/api/v1/',
-    STATIC_HOST: isProd ? `http://wyyhubang.oss-cn-chengdu.aliyuncs.com/static/` : '/static',
+    API_HOST: process.env.PROD ? "http://api.helpweb.top/api/v1/" : 'http://local.helpweb.top/api/v1/',
+    STATIC_HOST: '/static',
   },
 
   api: {
@@ -27,27 +27,25 @@ module.exports = {
 
   sassOptions: {
     // 写入额外变量
-    additionalData: isProd
-      ? `$static: 'http://wyyhubang.oss-cn-chengdu.aliyuncs.com/static/';`
-      : `$static: '/static';`,
+    additionalData: `$static: '/static';`
     // prependData:  isProd ? `@import "@/styles/config/prod.scss";` : `@import "@/styles/config/dev.scss";`,
   },
 
-  webpack: (config, { webpack }) => {
-    if (isProd) {
-      config.optimization.minimizer.push(
-        new TerserPlugin({
-          terserOptions: {
-            warnings: false,
-            extractComments: false, // 移除注释
-            compress: {
-              drop_console: true,
-              drop_debugger: true,
-            },
-          },
-        }),
-      );
-    }
-    return config;
-  },
+  // webpack: (config, { webpack }) => {
+  //   if (isProd) {
+  //     config.optimization.minimizer.push(
+  //       new TerserPlugin({
+  //         terserOptions: {
+  //           warnings: false,
+  //           extractComments: false, // 移除注释
+  //           compress: {
+  //             drop_console: true,
+  //             drop_debugger: true,
+  //           },
+  //         },
+  //       }),
+  //     );
+  //   }
+  //   return config;
+  // },
 }
