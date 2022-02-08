@@ -1,0 +1,134 @@
+.loginWidget {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .loginStatus {
+        margin-top: 40px;
+        text-align: center;
+
+        .loginStatusBt {
+            display: inline-block;
+            color: #435b87;
+            font-size: 14px;
+            padding: 3px 5px;
+            border-bottom: 2px solid transparent;
+            cursor: pointer;
+        }
+    }
+
+    .content {
+        position: relative;
+        width: 100%;
+        padding: 25px 36px 20px 30px;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        .errorText {
+            position: absolute;
+            top: 15px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 12px;
+            padding-left: 20px;
+            color: red;
+            transition: all 0.5s;
+            overflow: hidden;
+            white-space: nowrap;
+            background-image: url("/static/images/ico_error.png");
+            background-position: left center;
+            background-repeat: no-repeat;
+            background-size: 12px;
+        }
+
+        .inputWidget {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            border-bottom: 1px solid #e7ecf2;
+            margin: 13px 0;
+            overflow: hidden;
+
+            .inputContent {
+                flex: 1;
+                height: 100%;
+            }
+        }
+
+        .inputWidget > img {
+            margin-top: 8px;
+            margin-right: 10px;
+        }
+
+        .loginBtn {
+            width: 100%;
+            height: 40px;
+            border-radius: 4px;
+            margin-top: 30px;
+        }
+
+        .hintContent {
+            margin-top: 6px;
+            font-size: 12px;
+
+            .loginHint {
+                float: left;
+                color: #abb3be;
+            }
+
+            .forgetPwd {
+                float: right;
+                color: #848d99;
+                cursor: pointer;
+            }
+
+            .forgetPwd:hover {
+                color: #3388ff;
+            }
+        }
+
+        .hintContent::before,
+        .hintContent::after {
+            content: "";
+            display: table;
+        }
+
+        .hintContent::after {
+            clear: both;
+        }
+
+        .otherLogin {
+            margin-top: 20px;
+            text-align: center;
+
+            .qqLogin {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                background-image: url("/static/images/ico_qq_login.png");
+                background-position: left center;
+                background-repeat: no-repeat;
+                cursor: pointer;
+            }
+
+            .qqLogin:active {
+                background-position: right center;
+            }
+
+            .wechatLogin {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                background-image: url("/static/images/ico_wechat_login.png");
+                background-position: left center;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                margin-left: 90px;
+            }
+
+            .wechatLogin:active {
+                background-position: right center;
+            }
+        }
+    }
+}

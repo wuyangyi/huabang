@@ -1,0 +1,71 @@
+.footer {
+    width: 100%;
+    min-height: 550px;
+    background-color: #333;
+
+    .content {
+        width: 1200px;
+        height: 250px;
+        margin: 20px auto 0;
+
+        .down {
+            float: right;
+
+            .downOther {
+                float: left;
+                text-align: center;
+                color: rgba(255, 255, 255, 0.6);
+                font-size: 14px;
+                margin-right: 40px;
+            }
+
+            .downOther img {
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .copy {
+        width: 100%;
+        background-color: #282828;
+        margin-bottom: 0;
+        font-size: 12px;
+        position: relative;
+        text-align: center;
+        color: #999;
+        padding: 15px 0;
+
+        .copyLink {
+            padding: 0 5px;
+            color: #989898;
+        }
+    }
+}
+
+.footer ul {
+    float: left;
+    margin-left: 100px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+.footer ul:nth-child(1) {
+    margin-left: 20px;
+}
+
+.footer li {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.footer li > a:hover {
+    color: white;
+}
+
+.footer ul li:nth-child(1) {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 22px;
+    font-weight: bold;
+}

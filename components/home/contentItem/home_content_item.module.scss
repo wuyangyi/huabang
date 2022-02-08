@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "icomoon";
+    src: url("../../../public/static/fonts/icomoon.eot?tbi512");
+    src: url("../../../public/static/fonts/icomoon.eot?tbi512#iefix") format("embedded-opentype"),
+        url("../../../public/static/fonts/icomoon.ttf?tbi512") format("truetype"),
+        url("../../../public/static/fonts/icomoon.woff?tbi512") format("woff"),
+        url("../../../public/static/fonts/icomoon.svg?tbi512#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.itemContent {
+    width: 100%;
+    min-height: 300px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px 0 rgba(221, 228, 236, 0.5);
+    // overflow: hidden;
+
+    .contentTitle {
+        margin: 0;
+        display: block;
+        padding-left: 20px;
+        box-sizing: border-box;
+        height: 45px;
+        line-height: 45px;
+        font-size: 14px;
+        font-weight: normal;
+        border-bottom: 1px solid #e7e9f1;
+    }
+
+    .contentTitle::before {
+        position: relative;
+        content: "";
+        display: inline-block;
+        width: 2px;
+        height: 15px;
+        background-color: #3388ff;
+        margin-right: 10px;
+        top: 2px;
+    }
+
+    .lookMore {
+        float: right;
+        margin-right: 20px;
+        font-size: 12px;
+        cursor: pointer;
+        color: #848d99;
+    }
+
+    .lookMore::after {
+        position: relative;
+        content: "";
+        font-family: "icomoon";
+        color: #848d99;
+        font-size: 16px;
+        top: 1px;
+    }
+}

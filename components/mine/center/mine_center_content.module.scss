@@ -1,0 +1,56 @@
+.contentBody {
+    position: relative;
+    z-index: 1;
+    width: 1200px;
+    margin: 20px auto;
+
+    .left {
+        float: left;
+        width: 200px;
+        min-height: 10px;
+    }
+
+    .center {
+        float: left;
+        width: 860px;
+
+        .centerContent {
+            width: 100%;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 2px 4px 10px 0 #edeff5;
+            border-radius: 10px;
+        }
+    }
+
+    .right {
+        float: left;
+        width: 320px;
+        min-height: 10px;
+        margin-left: 20px;
+
+        .about_me {
+            margin-top: 20px;
+            background: #ffffff;
+            box-shadow: 2px 4px 10px 0 #edeff5;
+            border-radius: 10px;
+
+            .aboutContent {
+                padding: 15px 20px;
+                color: #999;
+                font-size: 13px;
+                text-indent: 2em;
+            }
+        }
+    }
+}
+
+.contentBody::after,
+.contentBody::before {
+    content: "";
+    display: table;
+}
+
+.contentBody::after {
+    clear: both;
+}

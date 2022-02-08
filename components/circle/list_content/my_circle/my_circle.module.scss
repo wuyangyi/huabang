@@ -1,0 +1,20 @@
+.content_title {
+    margin: 0 20px;
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #e7e9f1;
+    font-size: 14px;
+    color: #848d99;
+}
+
+.my_cirlce_content {
+    min-height: 500px;
+
+    .no_more {
+        text-align: center;
+        margin: 10px auto;
+        color: #999;
+        font-size: 13px;
+        cursor: default;
+    }
+}

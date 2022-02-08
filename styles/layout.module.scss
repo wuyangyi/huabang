@@ -1,0 +1,9 @@
+.toTop {
+    visibility: hidden;
+    position: fixed;
+    bottom: 100px;
+    right: calc((100% - 1200px) / 2 - 50px);
+    text-align: center;
+    cursor: pointer;
+    z-index: 1000;
+}

@@ -1,0 +1,36 @@
+.contentBody {
+    width: 1200px;
+    margin: 20px auto;
+
+    .left {
+        float: left;
+        width: 230px;
+        min-height: 10px;
+    }
+
+    .center {
+        float: left;
+        width: 700px;
+        margin: 0 20px;
+        height: 1000px;
+        background-color: white;
+        box-shadow: 2px 4px 10px 0 #edeff5;
+        border-radius: 10px;
+    }
+
+    .right {
+        float: left;
+        width: 230px;
+        min-height: 10px;
+    }
+}
+
+.contentBody::after,
+.contentBody::before {
+    content: "";
+    display: table;
+}
+
+.contentBody::after {
+    clear: both;
+}

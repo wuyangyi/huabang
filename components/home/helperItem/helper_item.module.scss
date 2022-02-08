@@ -1,0 +1,80 @@
+.itemContent {
+    position: relative;
+    width: 100%;
+    border-bottom: 2px solid #f5f6fa;
+    padding: 15px 20px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    .title {
+        display: flex;
+        flex-direction: row;
+
+        .helpName {
+            flex: 1;
+            color: #363951;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .helpMoney {
+            color: #3388ff;
+            font-size: 15px;
+        }
+    }
+
+    .helpTime {
+        color: #666666;
+        font-size: 14px;
+        margin-top: 5px;
+        line-height: 20px;
+
+        .peopleNumber {
+            display: inline-block;
+            margin-left: 40px;
+        }
+
+        .hotImg {
+            float: right;
+            margin-left: 8px;
+            display: none;
+        }
+    }
+
+    .helpUser {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+
+        .userHead {
+            border-radius: 50%;
+        }
+
+        .userName {
+            flex: 1;
+            line-height: 50px;
+            margin-left: 15px;
+            font-size: 15px;
+        }
+
+        .address {
+            line-height: 50px;
+            font-size: 13px;
+            color: #999;
+        }
+    }
+}
+
+.itemContent:hover {
+    box-shadow: 0 0 15px 0 rgba(26, 96, 177, 0.2);
+    transform: scale(1.02);
+    background-color: #f3f6fc !important;
+    border-radius: 4px !important;
+    border-bottom: 2px solid transparent;
+}
+
+.itemContent:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}

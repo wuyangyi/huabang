@@ -1,0 +1,116 @@
+.contentBody {
+    width: 1200px;
+    margin: 20px auto;
+
+    .left {
+        float: left;
+        width: 230px;
+        min-height: 10px;
+
+        .userCard {
+            height: 250px;
+        }
+
+        .leftMenu {
+            position: relative;
+            top: 0;
+            margin-top: 15px;
+            width: 100%;
+        }
+    }
+
+    .center {
+        float: left;
+        width: 700px;
+        margin: 0 20px;
+
+        .banner {
+            width: 100%;
+            height: 250px;
+            background-color: white;
+            box-shadow: 2px 4px 10px 0 #edeff5;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .content {
+            width: 100%;
+            min-height: 500px;
+            background-color: white;
+            box-shadow: 2px 4px 10px 0 #edeff5;
+            border-radius: 10px;
+            margin-top: 15px;
+            overflow: hidden;
+        }
+    }
+
+    .right {
+        float: left;
+        width: 230px;
+        min-height: 10px;
+
+        .joinCircle {
+            width: 100%;
+            height: 250px;
+            background-color: white;
+            box-shadow: 2px 4px 10px 0 #edeff5;
+            border-radius: 4px;
+            overflow: hidden;
+
+            .joinHint1 {
+                display: inline-block;
+                font-size: 14px;
+                color: #42454a;
+                font-weight: bold;
+                margin: 5px 20px 0;
+
+                .hot {
+                    color: #3388ff;
+                    font-size: 18px;
+                    display: inline-block;
+                    margin: 0 3px;
+                }
+            }
+
+            .joinHint {
+                display: inline-block;
+                color: #848d99;
+                font-size: 13px;
+                line-height: 13px;
+                margin: 8px 20px 0;
+            }
+
+            .createCircle {
+                width: 130px;
+                height: 34px;
+                background-color: #3388ff;
+                border-radius: 4px;
+                margin-left: 20px;
+                margin-top: 25px;
+                text-align: center;
+                cursor: pointer;
+
+                .createText {
+                    line-height: 34px;
+                    font-size: 13px;
+                    color: white;
+                    background-position: left center;
+                    background-repeat: no-repeat;
+                    background-size: auto 14px;
+                    padding-left: 20px;
+                    background-image: url("#{$static}/images/ico_create_circle.png");
+                }
+            }
+        }
+    }
+}
+
+.contentBody::after,
+.contentBody::before {
+    content: "";
+    display: table;
+}
+
+.contentBody::after {
+    clear: both;
+}
