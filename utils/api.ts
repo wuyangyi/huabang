@@ -39,7 +39,7 @@ const api = {
             token: token,
             did: "HUBANG_PC",
         }
-        let aesHeader = "now_time=" + header["now_time"]
+        let aesHeader = "&now_time=" + header["now_time"]
             + "&client=" + header["client"]
             + "&version=" + header["version"]
             + "&did=" + header["did"]
