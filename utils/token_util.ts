@@ -1,4 +1,5 @@
-import cookie from 'react-cookies'
+import Cookies from "js-cookie";
+
 export const tokenKey = "user_token";
 
 /**
@@ -7,14 +8,16 @@ export const tokenKey = "user_token";
  */
 export const saveToken = (token: string) => {
     // console.log("保存token", token);
-    cookie.save(tokenKey, token);
+    Cookies.set(tokenKey, token, {
+      expires: 30,
+    });
 }
 
 /**
  * 移除token
  */
 export const removeToken = () => {
-    cookie.remove(tokenKey);
+    Cookies.remove(tokenKey);
 }
 
 /**
@@ -22,7 +25,7 @@ export const removeToken = () => {
  * @returns 
  */
 export const getToken = () => {
-    const token = cookie.load(tokenKey);
+    const token = Cookies.get(tokenKey);
     console.log("获取token", token);
-    return token == null ? '' : token;
+    return token || '';
 }
