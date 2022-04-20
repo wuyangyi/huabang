@@ -28,7 +28,9 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         saveUserInfo: (state, action: PayloadAction<Res<LoginBean>>) => {
-            saveUserData(state, action.payload.data);
+            if (action.payload.status == 1) {
+                saveUserData(state, action.payload.data);
+            }
         },
 
         // 退出登录
@@ -45,13 +47,18 @@ export const userSlice = createSlice({
     },
     extraReducers: {
         [fetchAutoLogin.fulfilled.type]: (state, action: PayloadAction<Res<LoginBean>>) => {
-            saveUserData(state, action.payload.data);
+            if (action.payload.status == 1) {
+                saveUserData(state, action.payload.data);
+            }
         },
     }
 });
 
 // 保存用户数据
 function saveUserData(state, data: LoginBean) {
+    if (!data || !data.token) {
+        return;
+    }
     console.log("token", data.token);
 
     state.isLogin = true;
