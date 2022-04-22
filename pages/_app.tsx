@@ -9,7 +9,7 @@ import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import ErrorPage from '../layout/Error';
 import LoadingPage from '../layout/Loading';
-import wrapper, { useAppSelector } from '../store/store';
+import wrapper, { useAppDispatch, useAppSelector } from '../store/store';
 import { clearPending } from '../utils/api';
 
 import 'antd/dist/antd.css';
@@ -23,6 +23,8 @@ import { getToken, tokenKey } from '../utils/token_util';
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const { isLogin } = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const handleStart = (url) => {
@@ -36,6 +38,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       // 路由切换清空axios请求池
       clearPending();
     };
+
+    if (!isLogin) {
+      dispatch(fetchAutoLogin({}));
+    }
 
     router.events.on('routeChangeStart', handleStart);
     router.events.on('routeChangeComplete', handleStop);
@@ -89,9 +95,9 @@ MyApp.getInitialProps = wrapper.getInitialAppProps((store) => async ({ Component
   let userAgent;
   if (ctx.req) {
     console.log('------服务端------');
-    if (!store.getState().user.isLogin) {
-      await store.dispatch(fetchAutoLogin({}));
-    }
+    // if (!store.getState().user.isLogin) {
+    //   await store.dispatch(fetchAutoLogin({}));
+    // }
     userAgent = ctx.req.headers['user-agent'];
   } else {
     userAgent = navigator.userAgent;
