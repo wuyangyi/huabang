@@ -1,4 +1,4 @@
-name: hubang
+name: Deploy hubang
 
 on:
   # 手动触发
@@ -14,22 +14,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-
       # 切换分支
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-#      # 下载 git submodule
-#      - uses: srt32/git-actions@v0.0.3
-#        with:
-#          args: git submodule update --init --recursive
+      #      # 下载 git submodule
+      #      - uses: srt32/git-actions@v0.0.3
+      #        with:
+      #          args: git submodule update --init --recursive
 
-      # 使用 node:14
+      # 使用 node:16
       - name: use Node.js 14.18.1
         id: node
         uses: actions/setup-node@v2
         with:
-          node-version: '14.18.1'
+          node-version: "14.18.1"
 
       # 缓存 node modules
       - name: Cache node modules
@@ -45,7 +43,6 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-
       # npm install
       - name: Install Dependencies
         if: steps.node.outputs.cache-hit != 'true'
@@ -62,19 +59,20 @@ jobs:
         shell: bash
 
       # build
-      - name: Publish
-        run: npm run publish
-
+      - name: Build
+        run: npm run build
 
       # Deploy to server
       - name: Deploy to server
         id: deploy
-        uses: Pendect/action-rsyncer@v1.1.0
+        uses: cross-the-world/scp-pipeline@master
         env:
-          DEPLOY_KEY: ${{secrets.ACCESS_TOKEN}}
+          WELCOME: "ssh scp ssh pipelines"
+          LASTSSH: "Doing something after copying"
         with:
-          flags: '-avzr --delete'
-          options: ''
-          ssh_options: ''
-          src: 'dist/index.html'
-          dest: '${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}:/www/wwwroot/hubang'
+          host: ${{ secrets.SERVER_HOST }}
+          user: ${{ secrets.SERVER_USERNAME }}
+          pass: ${{ secrets.SERVER_PASS }}
+          connect_timeout: 10s
+          local: "./dist/*"
+          remote: /www/wwwroot/hubang
