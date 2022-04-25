@@ -67,20 +67,23 @@ jobs:
 
       # tar
       - name: Tar dist
-        run: tar zcf build.tar.gz build package.json package-lock.json next.config.js
+        run:
+          tar zcf build.tar.gz build package.json package-lock.json next.config.js
 
-      # Deploy to server
+          # Deploy to server
       - name: Deploy to server
         id: deploy
-        uses: Pendect/action-rsyncer@v1.1.0
+        uses: cross-the-world/scp-pipeline@master
         env:
-          DEPLOY_KEY: ${{secrets.ACCESS_TOKEN}}
+          WELCOME: "ssh scp ssh pipelines"
+          LASTSSH: "Doing something after copying"
         with:
-          flags: "-avzr --delete"
-          options: ""
-          ssh_options: ""
-          src: "build.tar.gz"
-          dest: "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/www/wwwroot/hubang"
+          host: ${{ secrets.SERVER_HOST }}
+          user: ${{ secrets.SERVER_USERNAME }}
+          pass: ${{ secrets.SERVER_PASS }}
+          connect_timeout: 10s
+          local: "build.tar.gz"
+          remote: /www/wwwroot/hubang
 
       # 远程Command
       - name: Command
@@ -88,7 +91,7 @@ jobs:
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.ACCESS_TOKEN }}
+          password: ${{ secrets.SERVER_PASS }}
           script: |
             cd /www/wwwroot/hubang
             tar zxf build.tar.gz
