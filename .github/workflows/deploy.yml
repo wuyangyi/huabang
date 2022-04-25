@@ -82,6 +82,21 @@ jobs:
           src: "build.tar.gz"
           dest: "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/www/wwwroot/hubang"
 
+      # Deploy to server
+      - name: Deploy to server
+        id: deploy
+        uses: cross-the-world/scp-pipeline@master
+        env:
+          WELCOME: "ssh scp ssh pipelines"
+          LASTSSH: "Doing something after copying"
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          user: ${{ secrets.SERVER_USERNAME }}
+          pass: ${{ secrets.SERVER_PASS }}
+          connect_timeout: 10s
+          src: "build.tar.gz"
+          dest: "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/www/wwwroot/hubang"
+
       # 远程Command
       - name: Command
         uses: appleboy/ssh-action@master
