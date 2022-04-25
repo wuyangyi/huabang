@@ -43,10 +43,13 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
+
       # npm install
       - name: Install Dependencies
         if: steps.node.outputs.cache-hit != 'true'
-        run: npm install
+        run: |
+          npm -v
+          npm install
 
       # Create .env
       - name: Create .env
@@ -62,17 +65,38 @@ jobs:
       - name: Build
         run: npm run build
 
+      # tar
+      - name: Tar dist
+        run: tar zcf build.tar.gz build package.json package-lock.json next.config.js
+
       # Deploy to server
       - name: Deploy to server
         id: deploy
-        uses: cross-the-world/scp-pipeline@master
+        uses: Pendect/action-rsyncer@v1.1.0
         env:
-          WELCOME: "ssh scp ssh pipelines"
-          LASTSSH: "Doing something after copying"
+          DEPLOY_KEY: ${{secrets.ACCESSKEY}}
+        with:
+          flags: "-avzr --delete"
+          options: ""
+          ssh_options: ""
+          src: "build.tar.gz"
+          dest: "${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }}:/www/wwwroot/hubang"
+
+      # 远程Command
+      - name: Command
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
-          user: ${{ secrets.SERVER_USERNAME }}
-          pass: ${{ secrets.SERVER_PASS }}
-          connect_timeout: 10s
-          local: "./dist/*"
-          remote: /www/wwwroot/hubang
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.ACCESSKEY }}
+          script: |
+            cd /www/wwwroot/hubang
+            tar zxf build.tar.gz
+            rm build.tar.gz
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
+            npm i
+            pm2 delete hubang
+            npm run pm2
+            pm2 save
+            echo "Complete!!!"
