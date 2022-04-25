@@ -74,7 +74,7 @@ jobs:
         id: deploy
         uses: Pendect/action-rsyncer@v1.1.0
         env:
-          DEPLOY_KEY: ${{secrets.ACCESSKEY}}
+          DEPLOY_KEY: ${{secrets.ACCESS_TOKEN}}
         with:
           flags: "-avzr --delete"
           options: ""
@@ -88,7 +88,7 @@ jobs:
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USERNAME }}
-          key: ${{ secrets.ACCESSKEY }}
+          key: ${{ secrets.ACCESS_TOKEN }}
           script: |
             cd /www/wwwroot/hubang
             tar zxf build.tar.gz
