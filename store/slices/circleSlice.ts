@@ -27,10 +27,10 @@ export const homeSlice = createSlice({
     },
     extraReducers: {
         [fetchAllCircleList.fulfilled.type]: (state, action: PayloadAction<Res<ListPageBean<CircleBean>>>) => {
-            state.allCircleData = action.payload.data;
+            state.allCircleData = action.payload.data || { total: 0, list: [] };
         },
         [fetchUserCircleList.fulfilled.type]: (state, action: PayloadAction<Res<ListPageBean<CircleBean>>>) => {
-            state.myCircleList = action.payload.data;
+            state.myCircleList = action.payload.data || { total: 0, list: [] };
         },
     },
 });
