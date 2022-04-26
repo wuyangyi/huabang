@@ -24,6 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const { isLogin } = useAppSelector((state) => state.user);
+  const { isShowLogin } = useAppSelector((state) => state.login);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -57,8 +58,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   if ([403, 404, 500].includes(pageProps.statusCode)) {
     return <ErrorPage statusCode={pageProps.statusCode} />;
   }
-
-  const isShowLogin = useAppSelector((state) => state.login.isShowLogin);
 
   return (
     <>
