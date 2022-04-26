@@ -67,7 +67,7 @@ jobs:
 
       # tar
       - name: Tar dist
-        run:|
+        run: |
           ls
           tar zcf build.tar.gz build package.json package-lock.json next.config.js static
 
