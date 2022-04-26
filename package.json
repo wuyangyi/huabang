@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "publish": "next build && next export",
+    "pm2": "pm2 start npm --no-pmx --name next-blogs -- start",
     "start": "next start",
     "lint": "next lint"
   },
