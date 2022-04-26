@@ -18,7 +18,7 @@ module.exports = {
   excludeDefaultMomentLocales: true,
   env: {
     API_HOST: isProd ? "http://api.helpweb.top/api/v1/" : 'http://local.helpweb.top/api/v1/',
-    STATIC_HOST: isProd ? `//cdn.leroy.net.cn/${name}/static` : '/static',
+    STATIC_HOST: isProd ? `//cdn.helpweb.top/${name}/static` : '/static',
   },
 
   api: {

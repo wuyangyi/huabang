@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "publish": "next build && node kodo.js",
-    "pm2": "pm2 start npm --no-pmx --name next-blogs -- start",
+    "pm2": "pm2 start npm --no-pmx --name hubang -- start",
     "start": "next start",
     "lint": "next lint"
   },
