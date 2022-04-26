@@ -27,9 +27,7 @@ module.exports = {
 
   sassOptions: {
     // 写入额外变量
-    additionalData: isProd
-      ? `$static: '//cdn.helpweb.top/${name}/static';`
-      : `$static: '/static';`,
+    additionalData: `$static: '/static';`,
     // prependData:  isProd ? `@import "@/styles/config/prod.scss";` : `@import "@/styles/config/dev.scss";`,
   },
 

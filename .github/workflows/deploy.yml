@@ -67,8 +67,7 @@ jobs:
 
       # tar
       - name: Tar dist
-        run: |
-          ls
+        run:
           tar zcf build.tar.gz build package.json package-lock.json next.config.js
 
           # Deploy to server
