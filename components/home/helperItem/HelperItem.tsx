@@ -4,7 +4,7 @@ import type { NameIdBean } from '../../../store/services/home';
 import type { HelperItemData } from '../../../store/services/helper';
 import { getHelpMoney, getTimeStringByNow } from '../../../utils/util';
 import Link from 'next/link';
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 const HelperItem: NextPage<HelperItemData> = (props) => {
 

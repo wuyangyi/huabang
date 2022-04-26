@@ -11,7 +11,7 @@ import CircleBanner, { BannerBannerBean } from "./banner/CirlceBanner";
 import styles from './circle_content.module.scss';
 import MyCircle from "./my_circle/MyCircle";
 import RankCircle from "./rank_circle/RankCircle";
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 const CircleContent: NextPage = () => {
     const { user, isLogin } = useAppSelector((state) => state.user)

@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { switchUserPageSelectIndex } from '../store/slices/mineSlice';
 import { outLogin } from '../store/slices/userSlice';
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 interface IHeader {
     page: number,

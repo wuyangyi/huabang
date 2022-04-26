@@ -9,7 +9,7 @@ import { route } from "next/dist/server/router";
 import { useDispatch } from "react-redux";
 import { showOrHideLogin } from "../../../store/slices/loginSlice";
 import { switchUserPageSelectIndex } from "../../../store/slices/mineSlice";
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 var stop = false;
 var timerID;

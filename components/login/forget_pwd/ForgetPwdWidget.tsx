@@ -9,7 +9,7 @@ import ActionButton from '../../widget/ActionButton';
 import CallUs from "./call_us/CallUs";
 import { useDispatch } from "react-redux";
 import FindPwdSuccess from "./find_pwd/FindPwdSuccess";
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 const ForgetPwdWidget: NextPage<ILoginWidget> = ({
     switchLogin

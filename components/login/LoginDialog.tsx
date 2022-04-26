@@ -5,7 +5,7 @@ import { hideLogin } from '../../store/slices/loginSlice';
 import LoginWidget from './login/LoginWidget';
 import { useState } from 'react';
 import ForgetPwdWidget from './forget_pwd/ForgetPwdWidget';
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 const LoginDialog: NextPage = () => {
 

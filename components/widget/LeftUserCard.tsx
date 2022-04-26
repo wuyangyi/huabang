@@ -3,7 +3,7 @@ import styles from '../../styles/components/widget/left_user_card.module.scss';
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import React, { useState } from "react";
 import { showOrHideLogin } from "../../store/slices/loginSlice";
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 interface ILeftUserCard {
     className?: {},

@@ -9,7 +9,7 @@ import CircleItem from '../item/circle/CircleItem';
 import { NextPage } from "next";
 import LeftMenuWidget, { LeftMenuBean } from "../widget/LeftMenuWidget";
 import RecommendCircle from "../circle/recommend_circle/RecommendCircle";
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 interface HomeData {
     recommendData: HelperItemData[],

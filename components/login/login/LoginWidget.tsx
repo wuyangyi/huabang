@@ -13,7 +13,7 @@ import { AxiosPromise, AxiosResponse } from "axios";
 import { saveUser } from "../../../store/slices/userSlice";
 import { encrypt } from "../../../utils/aes";
 import { hideLogin } from '../../../store/slices/loginSlice';
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 export interface ILoginWidget {
     switchLogin: (showForget: boolean) => void,

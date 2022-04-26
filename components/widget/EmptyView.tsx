@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import styles from '../../styles/components/widget/empty_view.module.scss';
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 
 const EmptyView: NextPage<{ type?: number }> = (

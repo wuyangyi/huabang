@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { ReactNode, useEffect } from 'react';
 import styles from '../styles/layout.module.scss';
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 const Layout: NextPage<{
     title?: string;

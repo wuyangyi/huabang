@@ -46,7 +46,7 @@ jobs:
 
       # npm install
       - name: Install Dependencies
-        # if: steps.node.outputs.cache-hit != 'true'
+        if: steps.node.outputs.cache-hit != 'true'
         run: |
           npm -v
           npm install

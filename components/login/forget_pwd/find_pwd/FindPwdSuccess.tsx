@@ -2,7 +2,7 @@ import { Component } from "react";
 import styles from './find_pwd_success.module.scss';
 import ActionButton from '../../../widget/ActionButton';
 import { IGoLogin } from "../call_us/CallUs";
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 export default class FindPwdSuccess extends Component<IGoLogin> {
 

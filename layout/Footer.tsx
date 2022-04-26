@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/footer.module.scss";
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 
 const Footer = () => {

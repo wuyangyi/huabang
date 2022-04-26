@@ -3,7 +3,7 @@ import { useState } from "react";
 import ActionButton from "../../widget/ActionButton";
 import InputWidget from "../../widget/InputWidget";
 import styles from './create_circle_content.module.scss';
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 
 const CreateCircleContent: NextPage = () => {

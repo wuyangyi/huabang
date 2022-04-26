@@ -3,7 +3,7 @@ import { UserBean } from "../../../../store/services/user";
 import { useAppSelector } from "../../../../store/store";
 import { IMineCenter } from "../MineCenterContent";
 import styles from './top_user_info.module.scss';
-const staticPath = process.env.STATIC_PATH;
+const staticPath = process.env.STATIC_HOST;
 
 
 const TopUserInfo: NextPage<IMineCenter> = ({ userInfo, isSelf }) => {
