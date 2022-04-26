@@ -63,7 +63,7 @@ jobs:
 
       # build
       - name: Build
-        run: npm run publish
+        run: npm run build
 
       # tar
       - name: Tar dist
