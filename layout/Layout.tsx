@@ -40,7 +40,7 @@ const Layout: NextPage<{
             <meta name="description" content={description || ''} />
             <meta property="og:description" content={description || ''} />
             <meta property="og:image" content="" />
-            <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+            <link rel="icon" type="image/x-icon" href="http://cdn.helpweb.top/hubang/favicon.ico" />
         </Head>
         <main className={className}>{children}</main>
 
