@@ -9,6 +9,7 @@ import { route } from "next/dist/server/router";
 import { useDispatch } from "react-redux";
 import { showOrHideLogin } from "../../../store/slices/loginSlice";
 import { switchUserPageSelectIndex } from "../../../store/slices/mineSlice";
+const staticPath = process.env.STATIC_PATH;
 
 var stop = false;
 var timerID;
@@ -47,55 +48,55 @@ const HomeBanner: NextPage = () => {
     const menus = [
         {
             "id": 0,
-            "image": "/static/images/ico_helper.png",
+            "image": `${staticPath}/images/ico_helper.png`,
             "title": "我的求助",
             "link": "/user/" + user?.id
         },
         {
             "id": 1,
-            "image": "/static/images/ico_order.png",
+            "image": `${staticPath}/images/ico_order.png`,
             "title": "我的订单",
             "link": ""
         },
         {
             "id": 2,
-            "image": "/static/images/ico_notify.png",
+            "image": `${staticPath}/images/ico_notify.png`,
             "title": "系统通知",
             "link": ""
         },
         {
             "id": 3,
-            "image": "/static/images/ico_contract.png",
+            "image": `${staticPath}/images/ico_contract.png`,
             "title": "联系人",
             "link": ""
         },
         {
             "id": 4,
-            "image": "/static/images/ico_group.png",
+            "image": `${staticPath}/images/ico_group.png`,
             "title": "我的群聊",
             "link": ""
         },
         {
             "id": 5,
-            "image": "/static/images/ico_circle.png",
+            "image": `${staticPath}/images/ico_circle.png`,
             "title": "我的帮圈",
             "link": "/user/" + user?.id
         },
         {
             "id": 6,
-            "image": "/static/images/ico_rz.png",
+            "image": `${staticPath}/images/ico_rz.png`,
             "title": "实名认证",
             "link": ""
         },
         {
             "id": 7,
-            "image": "/static/images/ico_sc.png",
+            "image": `${staticPath}/images/ico_sc.png`,
             "title": "积分商城",
             "link": ""
         },
         {
             "id": 8,
-            "image": "/static/images/ico_work.png",
+            "image": `${staticPath}/images/ico_work.png`,
             "title": "招聘兼职",
             "link": ""
         }

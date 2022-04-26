@@ -3,6 +3,7 @@ import styles from '../../styles/components/widget/left_user_card.module.scss';
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import React, { useState } from "react";
 import { showOrHideLogin } from "../../store/slices/loginSlice";
+const staticPath = process.env.STATIC_PATH;
 
 interface ILeftUserCard {
     className?: {},
@@ -28,7 +29,7 @@ const LeftUserCard: NextPage<ILeftUserCard> = ({
 
     return <div className={[styles.menuLeft, className].join(" ")}>
         <div className={styles.signUser}>
-            <img className={styles.userHeader} src={user?.avatar ? user?.avatar : "/static/images/default_user.png"} alt="" />
+            <img className={styles.userHeader} src={user?.avatar ? user?.avatar : `${staticPath}/images/default_user.png`} alt="" />
             <span>{isLogin && user?.nickname ? user?.nickname : '游客身份'}</span>
         </div>
         <p className={styles.userDesc} style={{ WebkitLineClamp: descMaxLine, maxLines: descMaxLine }}>{isLogin ? user?.description : ""}</p>

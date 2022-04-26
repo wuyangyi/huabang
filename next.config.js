@@ -17,8 +17,8 @@ module.exports = {
   },
   excludeDefaultMomentLocales: true,
   env: {
-    API_HOST: process.env.PROD ? "http://api.helpweb.top/api/v1/" : 'http://local.helpweb.top/api/v1/',
-    STATIC_HOST: '/static',
+    API_HOST: isProd ? "http://api.helpweb.top/api/v1/" : 'http://local.helpweb.top/api/v1/',
+    STATIC_HOST: isProd ? `//cdn.leroy.net.cn/${name}/static` : '/static',
   },
 
   api: {
@@ -27,7 +27,9 @@ module.exports = {
 
   sassOptions: {
     // 写入额外变量
-    additionalData: `$static: '/static';`
+    additionalData: isProd
+      ? `$static: '//cdn.helpweb.top/${name}/static';`
+      : `$static: '/static';`,
     // prependData:  isProd ? `@import "@/styles/config/prod.scss";` : `@import "@/styles/config/dev.scss";`,
   },
 

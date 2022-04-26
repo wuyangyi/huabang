@@ -113,7 +113,7 @@
             line-height: 13px;
             height: 15px;
             text-align: center;
-            background-image: url("/static/images/center_edit.png");
+            background-image: url("#{$static}/images/center_edit.png");
             background-position: 15px;
             background-repeat: no-repeat;
             background-position: left center;
@@ -122,7 +122,7 @@
         }
 
         .follow {
-            background-image: url("/static/images/ico_followed.png");
+            background-image: url("#{$static}/images/ico_followed.png");
             background-position: left center;
             background-size: 15px 14px;
             background-repeat: no-repeat;

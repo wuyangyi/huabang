@@ -35,7 +35,7 @@
             transition: all 0.5s;
             overflow: hidden;
             white-space: nowrap;
-            background-image: url("/static/images/ico_error.png");
+            background-image: url("#{$static}/images/ico_error.png");
             background-position: left center;
             background-repeat: no-repeat;
             background-size: 12px;
@@ -105,7 +105,7 @@
                 display: inline-block;
                 width: 40px;
                 height: 40px;
-                background-image: url("/static/images/ico_qq_login.png");
+                background-image: url("#{$static}/images/ico_qq_login.png");
                 background-position: left center;
                 background-repeat: no-repeat;
                 cursor: pointer;
@@ -119,7 +119,7 @@
                 display: inline-block;
                 width: 40px;
                 height: 40px;
-                background-image: url("/static/images/ico_wechat_login.png");
+                background-image: url("#{$static}/images/ico_wechat_login.png");
                 background-position: left center;
                 background-repeat: no-repeat;
                 cursor: pointer;

@@ -13,6 +13,7 @@ import { AxiosPromise, AxiosResponse } from "axios";
 import { saveUser } from "../../../store/slices/userSlice";
 import { encrypt } from "../../../utils/aes";
 import { hideLogin } from '../../../store/slices/loginSlice';
+const staticPath = process.env.STATIC_PATH;
 
 export interface ILoginWidget {
     switchLogin: (showForget: boolean) => void,
@@ -178,7 +179,7 @@ const LoginWidget: NextPage<ILoginWidget> = ({
             <div className={styles.errorText} style={{ opacity: errorText ? 1 : 0 }}>{errorText}</div>
 
             <div className={styles.inputWidget}>
-                <img src="/static/images/ico_login_phone.png" height="20px" alt="" />
+                <img src={`${staticPath}/images/ico_login_phone.png`} height="20px" alt="" />
                 <div className={styles.inputContent}>
                     <InputWidget
                         height="36px"
@@ -191,7 +192,7 @@ const LoginWidget: NextPage<ILoginWidget> = ({
                 <GetCodeWidget phone={phone} getCode={getCode} isHidden={!isCodeLogin} setCanSend={setCanSend} />
             </div>
             <div className={styles.inputWidget} style={{ visibility: isCodeLogin ? 'visible' : 'hidden', height: isCodeLogin ? "36px" : '0px', margin: "0" }}>
-                <img src="/static/images/ico_login_code.png" height="20px" alt="" />
+                <img src={`${staticPath}/images/ico_login_code.png`} height="20px" alt="" />
                 <div className={styles.inputContent}>
                     <InputWidget
                         hintText="输入验证码"
@@ -200,7 +201,7 @@ const LoginWidget: NextPage<ILoginWidget> = ({
                 </div>
             </div>
             <div className={styles.inputWidget} style={{ visibility: isCodeLogin ? 'hidden' : 'visible', height: isCodeLogin ? "0px" : "36px", margin: "0" }}>
-                <img src="/static/images/ico_login_password.png" height="20px" alt="" />
+                <img src={`${staticPath}/images/ico_login_password.png`} height="20px" alt="" />
                 <div className={styles.inputContent}>
                     <InputWidget
                         hintText="输入密码 （6-20位数字和字母）"

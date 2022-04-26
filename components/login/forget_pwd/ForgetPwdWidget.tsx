@@ -9,6 +9,7 @@ import ActionButton from '../../widget/ActionButton';
 import CallUs from "./call_us/CallUs";
 import { useDispatch } from "react-redux";
 import FindPwdSuccess from "./find_pwd/FindPwdSuccess";
+const staticPath = process.env.STATIC_PATH;
 
 const ForgetPwdWidget: NextPage<ILoginWidget> = ({
     switchLogin
@@ -99,7 +100,7 @@ const ForgetPwdWidget: NextPage<ILoginWidget> = ({
             <div className={styles.errorText} style={{ opacity: errorText ? 1 : 0 }}>{errorText}</div>
 
             <div className={styles.inputWidget} style={{ marginTop: "40px" }}>
-                <img src="/static/images/ico_login_phone.png" height="20px" alt="" />
+                <img src={`${staticPath}/images/ico_login_phone.png`} height="20px" alt="" />
                 <div className={styles.inputContent}>
                     <InputWidget
                         hintText="请输入手机号"
@@ -111,7 +112,7 @@ const ForgetPwdWidget: NextPage<ILoginWidget> = ({
                 <GetCodeWidget phone={phone} getCode={getCode} setCanSend={setCanSend} />
             </div>
             <div className={styles.inputWidget}>
-                <img src="/static/images/ico_login_code.png" height="20px" alt="" />
+                <img src={`${staticPath}/images/ico_login_code.png`} height="20px" alt="" />
                 <div className={styles.inputContent}>
                     <InputWidget
                         hintText="输入验证码"
@@ -120,7 +121,7 @@ const ForgetPwdWidget: NextPage<ILoginWidget> = ({
                 </div>
             </div>
             <div className={styles.inputWidget}>
-                <img src="/static/images/ico_login_password.png" height="20px" alt="" />
+                <img src={`${staticPath}/images/ico_login_password.png`} height="20px" alt="" />
                 <div className={styles.inputContent}>
                     <InputWidget
                         hintText="输入密码 （6-20位数字和字母）"

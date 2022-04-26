@@ -4,6 +4,7 @@ import type { NameIdBean } from '../../../store/services/home';
 import type { HelperItemData } from '../../../store/services/helper';
 import { getHelpMoney, getTimeStringByNow } from '../../../utils/util';
 import Link from 'next/link';
+const staticPath = process.env.STATIC_PATH;
 
 const HelperItem: NextPage<HelperItemData> = (props) => {
 
@@ -48,8 +49,8 @@ const HelperItem: NextPage<HelperItemData> = (props) => {
         <div className={style.helpTime}>
             {"时间：" + getHelpTime(props.start_time, props.end_time)}
             <span className={style.peopleNumber}>{"人数：" + getPeopleNumber(props.people_number)}</span>
-            <img className={style.hotImg} src="/static/images/ico_zhengming.png" width="20px" style={{ display: props.finish_prove ? "block" : "none" }} alt="" />
-            <img className={style.hotImg} src="/static/images/ico_anxious.png" width="20px" style={{ display: props.is_urgent ? "block" : "none" }} alt="" />
+            <img className={style.hotImg} src={`${staticPath}/images/ico_zhengming.png`} width="20px" style={{ display: props.finish_prove ? "block" : "none" }} alt="" />
+            <img className={style.hotImg} src={`${staticPath}/images/ico_anxious.png`} width="20px" style={{ display: props.is_urgent ? "block" : "none" }} alt="" />
         </div>
 
         <div className={style.helpUser}>

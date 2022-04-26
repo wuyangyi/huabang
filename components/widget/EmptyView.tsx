@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import styles from '../../styles/components/widget/empty_view.module.scss';
+const staticPath = process.env.STATIC_PATH;
 
 
 const EmptyView: NextPage<{ type?: number }> = (
@@ -10,7 +11,7 @@ const EmptyView: NextPage<{ type?: number }> = (
     function getErrorImg() {
         let img = "";
         if (type == 0) { //无内容
-            img = "/static/images/ico_empty.png"
+            img = `${staticPath}/images/ico_empty.png`
         }
         return img;
     }

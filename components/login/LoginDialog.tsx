@@ -5,6 +5,7 @@ import { hideLogin } from '../../store/slices/loginSlice';
 import LoginWidget from './login/LoginWidget';
 import { useState } from 'react';
 import ForgetPwdWidget from './forget_pwd/ForgetPwdWidget';
+const staticPath = process.env.STATIC_PATH;
 
 const LoginDialog: NextPage = () => {
 
@@ -34,8 +35,8 @@ const LoginDialog: NextPage = () => {
         <div className={styles.login}>
             <div className={styles.loginBody}>
                 <div className={styles.leftContent}>
-                    <img className={styles.logo} src="/static/images/login_logo.png" width="140px" alt="" />
-                    <img className={styles.downCode} src="/static/images/app_down.png" width="160px" alt="" />
+                    <img className={styles.logo} src={`${staticPath}/images/login_logo.png`} width="140px" alt="" />
+                    <img className={styles.downCode} src={`${staticPath}/images/app_down.png`} width="160px" alt="" />
                     <p className={styles.downHint}>下载互帮APP</p>
                     <p className={styles.downHint}>有更多功能等着你</p>
                 </div>
@@ -51,7 +52,7 @@ const LoginDialog: NextPage = () => {
                 </div>
             </div>
             <img className={styles.dialogClose}
-                src="/static/images/ico_white_close.png"
+                src={`${staticPath}/images/ico_white_close.png`}
                 width="30px"
                 onClick={closeLogin} alt="" />
         </div>

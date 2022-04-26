@@ -5,37 +5,37 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "publish": "next build && next export",
+    "publish": "next build && node kodo.js",
     "pm2": "pm2 start npm --no-pmx --name next-blogs -- start",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
-    "@zeit/next-sass": "^1.0.1",
     "antd": "^4.16.12",
     "axios": "^0.23.0",
     "crypto-js": "^4.1.1",
     "js-cookie": "^3.0.1",
-    "lodash": "^4.17.21",
-    "next": "11.1.2",
+    "next": "^12.1.5",
     "next-redux-wrapper": "^7.0.2",
-    "node-sass": "^4.14.1",
-    "npm": "^8.1.1",
-    "or": "^0.2.0",
     "qs": "^6.10.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-redux": "^7.2.4"
+    "react-redux": "^7.2.4",
+    "sass": "^1.51.0"
   },
   "devDependencies": {
     "@types/crypto-js": "^4.0.2",
     "@types/js-cookie": "^3.0.1",
-    "@types/lodash": "^4.14.172",
     "@types/react": "17.0.30",
     "@types/react-redux": "^7.1.18",
-    "eslint": "8.0.1",
-    "eslint-config-next": "11.1.2",
+    "co": "^4.6.0",
+    "dotenv": "^16.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^12.1.5",
+    "path": "^0.12.7",
+    "qiniu": "^7.4.0",
+    "rd": "^2.0.1",
     "typescript": "4.4.4"
   }
 }

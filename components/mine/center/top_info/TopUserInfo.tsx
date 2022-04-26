@@ -3,6 +3,7 @@ import { UserBean } from "../../../../store/services/user";
 import { useAppSelector } from "../../../../store/store";
 import { IMineCenter } from "../MineCenterContent";
 import styles from './top_user_info.module.scss';
+const staticPath = process.env.STATIC_PATH;
 
 
 const TopUserInfo: NextPage<IMineCenter> = ({ userInfo, isSelf }) => {
@@ -30,7 +31,7 @@ const TopUserInfo: NextPage<IMineCenter> = ({ userInfo, isSelf }) => {
                 <div className={styles.name}>
                     <span className={styles.nickname}>{userInfo?.nickname}</span>
                     {
-                        userInfo?.sex && <img className={styles.sex} src={userInfo?.sex == 2 ? '/static/images/img_girl_icon.png' : '/static/images/img_boy_icon.png'} alt="" />
+                        userInfo?.sex && <img className={styles.sex} src={userInfo?.sex == 2 ? `${staticPath}/images/img_girl_icon.png` : `${staticPath}/images/img_boy_icon.png`} alt="" />
                     }
                 </div>
                 <span className={styles.credit_score}>{getRz()} / 成单率{userInfo?.order_rate}% / 信用{userInfo?.credit_score}</span>
@@ -41,7 +42,7 @@ const TopUserInfo: NextPage<IMineCenter> = ({ userInfo, isSelf }) => {
                     <span className={[styles.edit, styles.flexEnd].join(' ')}>编辑</span> :
                     userInfo.followed ?
                         <span className={[styles.follow, styles.flexEnd].join(' ')}>已关注</span> :
-                        <img className={styles.flexEnd} src="/static/images/ico_follow.png" width={40} alt="" />
+                        <img className={styles.flexEnd} src={`${staticPath}/images/ico_follow.png`} width={40} alt="" />
             }
         </div>
     </div>

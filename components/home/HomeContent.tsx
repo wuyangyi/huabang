@@ -9,6 +9,7 @@ import CircleItem from '../item/circle/CircleItem';
 import { NextPage } from "next";
 import LeftMenuWidget, { LeftMenuBean } from "../widget/LeftMenuWidget";
 import RecommendCircle from "../circle/recommend_circle/RecommendCircle";
+const staticPath = process.env.STATIC_PATH;
 
 interface HomeData {
     recommendData: HelperItemData[],
@@ -30,28 +31,28 @@ const HomeContent: NextPage<HomeData> = (props) => {
         {
             "id": 0,
             "title": "合适推荐",
-            "image": "/static/images/ico_comment.png",
+            "image": `${staticPath}/images/ico_comment.png`,
             "num": 0,
             "list": props.recommendData
         },
         {
             "id": 1,
             "title": "我的关注",
-            "image": "/static/images/ico_like.png",
+            "image": `${staticPath}/images/ico_like.png`,
             "num": 0,
             "list": props.likeData
         },
         {
             "id": 2,
             "title": "在我身边",
-            "image": "/static/images/ico_address.png",
+            "image": `${staticPath}/images/ico_address.png`,
             "num": 0,
             "list": props.nearbyData
         },
         {
             "id": 3,
             "title": "紧急求助",
-            "image": "/static/images/ico_hot.png",
+            "image": `${staticPath}/images/ico_hot.png`,
             "num": 0,
             "list": props.hortData
         }
@@ -190,7 +191,7 @@ const HomeContent: NextPage<HomeData> = (props) => {
                 </div>
                 <div className={styles.contentRight}>
                     <div className={styles.hotNews}>
-                        <ModuleTitle title="互帮头条" image="/static/images/ico_hot.png" link="/" />
+                        <ModuleTitle title="互帮头条" image={`${staticPath}/images/ico_hot.png`} link="/" />
                         <ul className={styles.hotNewsContent}>
                             {
                                 hotNews.map((item, index) => {

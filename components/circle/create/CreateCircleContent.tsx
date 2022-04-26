@@ -3,6 +3,7 @@ import { useState } from "react";
 import ActionButton from "../../widget/ActionButton";
 import InputWidget from "../../widget/InputWidget";
 import styles from './create_circle_content.module.scss';
+const staticPath = process.env.STATIC_PATH;
 
 
 const CreateCircleContent: NextPage = () => {
@@ -21,7 +22,7 @@ const CreateCircleContent: NextPage = () => {
 
             <div className={styles.circleHead}>
                 <span className={styles.name}>头&emsp;&emsp;像：</span>
-                <img className={styles.upHeader} src="/static/images/up_header.png" alt="" />
+                <img className={styles.upHeader} src={`${staticPath}/images/up_header.png`} alt="" />
             </div>
             <div className={styles.circleName}>
                 <span className={styles.name}>帮圈名称：</span>
@@ -37,7 +38,7 @@ const CreateCircleContent: NextPage = () => {
             <div className={styles.circleMember}>
                 <span className={styles.name}>添加成员：</span>
                 <div className={styles.members}>
-                    <img className={styles.memberAdd} src="/static/images/ico_group_add.png" alt="" />
+                    <img className={styles.memberAdd} src={`${staticPath}/images/ico_group_add.png`} alt="" />
                 </div>
             </div>
 

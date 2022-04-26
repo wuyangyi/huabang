@@ -11,6 +11,7 @@ import CircleBanner, { BannerBannerBean } from "./banner/CirlceBanner";
 import styles from './circle_content.module.scss';
 import MyCircle from "./my_circle/MyCircle";
 import RankCircle from "./rank_circle/RankCircle";
+const staticPath = process.env.STATIC_PATH;
 
 const CircleContent: NextPage = () => {
     const { user, isLogin } = useAppSelector((state) => state.user)
@@ -34,19 +35,19 @@ const CircleContent: NextPage = () => {
         {
             "id": 0,
             "title": "全部圈子",
-            "image": "/static/images/ico_circle_all.png",
+            "image": `${staticPath}/images/ico_circle_all.png`,
             "num": 0,
         },
         {
             "id": 1,
             "title": "我的帮圈",
-            "image": "/static/images/ico_circle_my.png",
+            "image": `${staticPath}/images/ico_circle_my.png`,
             "num": 0,
         },
         {
             "id": 2,
             "title": "排行榜",
-            "image": "/static/images/ico_circle_rank.png",
+            "image": `${staticPath}/images/ico_circle_rank.png`,
             "num": 0,
         },
     ];
@@ -111,7 +112,7 @@ const CircleContent: NextPage = () => {
         </div>
         <div className={styles.right}>
             <div className={styles.joinCircle}>
-                <img src="/static/images/ico_join_circle_bg.png" width="100%" alt="" />
+                <img src={`${staticPath}/images/ico_join_circle_bg.png`} width="100%" alt="" />
                 <span className={styles.joinHint1}>更多<span className={styles.hot}>热门</span>帮圈等你加入！</span>
                 <span className={styles.joinHint}>快来创建自己的圈子吧~</span>
                 <div className={styles.createCircle} onClick={createCircle}>

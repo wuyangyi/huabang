@@ -1,6 +1,7 @@
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
 import styles from '../../styles/components/widget/input_widget.module.scss';
+const staticPath = process.env.STATIC_PATH;
 
 interface InputDate {
     hintText?: string,
@@ -68,7 +69,7 @@ const InputWidget: NextPage<InputDate> = (
         </div>
         <img
             className={styles.clearIcon}
-            src="/static/images/ico_clear.png"
+            src={`${staticPath}/images/ico_clear.png`}
             width="20px"
             height="20px"
             style={{ visibility: text === '' ? 'hidden' : 'visible' }}
@@ -77,7 +78,7 @@ const InputWidget: NextPage<InputDate> = (
         />
         <img
             className={styles.pwdShow}
-            src={pwdType === "password" ? "/static/images/ico_pwd_hide.png" : "/static/images/ico_pwd_show.png"}
+            src={pwdType === "password" ? `${staticPath}/images/ico_pwd_hide.png` : `${staticPath}/images/ico_pwd_show.png`}
             width="20px"
             height="15px"
             style={{ display: inputType === 'password' ? "block" : "none" }}

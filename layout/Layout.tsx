@@ -3,6 +3,7 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { ReactNode, useEffect } from 'react';
 import styles from '../styles/layout.module.scss';
+const staticPath = process.env.STATIC_PATH;
 
 const Layout: NextPage<{
     title?: string;
@@ -43,7 +44,7 @@ const Layout: NextPage<{
         </Head>
         <main className={className}>{children}</main>
 
-        <img id="toTop" className={styles.toTop} src="/static/images/ico_go_top.png" width="40px" title="返回顶部" alt="" onClick={() => {
+        <img id="toTop" className={styles.toTop} src={`${staticPath}/images/ico_go_top.png`} width="40px" title="返回顶部" alt="" onClick={() => {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth',

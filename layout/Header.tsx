@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { switchUserPageSelectIndex } from '../store/slices/mineSlice';
 import { outLogin } from '../store/slices/userSlice';
+const staticPath = process.env.STATIC_PATH;
 
 interface IHeader {
     page: number,
@@ -25,31 +26,31 @@ const Header: NextPage<IHeader> = (props) => {
     const userCenterList = [
         {
             id: 0,
-            image: "/static/images/ico_my_center.png",
+            image: `${staticPath}/images/ico_my_center.png`,
             title: "我的主页",
             link: "/user/" + user?.id
         },
         {
             id: 1,
-            image: "/static/images/ico_my_circle.png",
+            image: `${staticPath}/images/ico_my_circle.png`,
             title: "我的帮圈",
             link: "/user/" + user?.id
         },
         {
             id: 2,
-            image: "/static/images/ico_collect.png",
+            image: `${staticPath}/images/ico_collect.png`,
             title: "我的收藏",
             link: "/user/" + user?.id
         },
         {
             id: 3,
-            image: "/static/images/ico_setting.png",
+            image: `${staticPath}/images/ico_setting.png`,
             title: "系统设置",
             link: ""
         },
         {
             id: 4,
-            image: "/static/images/ico_out_login.png",
+            image: `${staticPath}/images/ico_out_login.png`,
             title: "退出登录",
             link: ""
         }
@@ -58,17 +59,17 @@ const Header: NextPage<IHeader> = (props) => {
     const sendList = [
         {
             id: 0,
-            image: "/static/images/ico_release_help.png",
+            image: `${staticPath}/images/ico_release_help.png`,
             title: "发求助"
         },
         {
             id: 1,
-            image: "/static/images/ico_release_dynamic.png",
+            image: `${staticPath}/images/ico_release_dynamic.png`,
             title: "发动态"
         },
         {
             id: 2,
-            image: "/static/images/ico_release_wz.png",
+            image: `${staticPath}/images/ico_release_wz.png`,
             title: "发文章"
         }
     ];
@@ -134,7 +135,7 @@ const Header: NextPage<IHeader> = (props) => {
     return (
         <header className={styles.header} style={{ paddingRight: isShowLogin ? (getScrollbarWidth() + 'px') : '0px' }}>
             <div className={styles.content}>
-                <a href="../"><img className={styles.logo} src="/static/images/logo.png" title="互帮" alt="" /></a>
+                <a href="../"><img className={styles.logo} src={`${staticPath}/images/logo.png`} title="互帮" alt="" /></a>
                 <ul className={styles.menu}>
                     <li className={props.page === 0 ? styles.menuSelect : ''}>
                         <Link href="/"><a className={styles.menuAHome}>首页</a></Link>
@@ -160,7 +161,7 @@ const Header: NextPage<IHeader> = (props) => {
                         isLogin ? (
                             <ul className={styles.userMenu}>
                                 <li className={styles.user}>
-                                    <img id="userHead" src={user?.avatar ? user?.avatar : '/static/images/default_user.png'} onClick={() => { userCenterShow() }} alt="" />
+                                    <img id="userHead" src={user?.avatar ? user?.avatar : `${staticPath}/images/default_user.png`} onClick={() => { userCenterShow() }} alt="" />
                                     <div className={styles.userCenter}
                                         style={{ visibility: isShowUserCenter ? 'visible' : 'hidden' }}>
                                         <ul>
@@ -180,11 +181,11 @@ const Header: NextPage<IHeader> = (props) => {
                                     </div>
                                 </li>
                                 <li>
-                                    <img src="/static/images/header_message.png" alt="" />
+                                    <img src={`${staticPath}/images/header_message.png`} alt="" />
                                     <span className={styles.messageHint}>9</span>
                                 </li>
                                 <li>
-                                    <img id="sendDynamic" src="/static/images/header_send.png" onClick={() => { sendShow() }} alt="" />
+                                    <img id="sendDynamic" src={`${staticPath}/images/header_send.png`} onClick={() => { sendShow() }} alt="" />
                                     <div className={styles.sendDynamic}
                                         style={{ visibility: isShowSendDynamic ? 'visible' : 'hidden' }}>
                                         <ul>

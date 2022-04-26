@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "../styles/footer.module.scss";
+const staticPath = process.env.STATIC_PATH;
 
 
 const Footer = () => {
     return (
         <>
             <footer className={styles.footer}>
-                <img src="/static/images/footer.png" width="100%" alt="" />
+                <img src={`${staticPath}/images/footer.png`} width="100%" alt="" />
                 <div className={styles.content}>
                     <ul>
                         <li>关于我们</li>
@@ -32,15 +33,15 @@ const Footer = () => {
 
                     <div className={styles.down}>
                         <div className={styles.downOther}>
-                            <img src="/static/images/app_down.png" width="80px" alt="" />
+                            <img src={`${staticPath}/images/app_down.png`} width="80px" alt="" />
                             APP下载
                         </div>
                         <div className={styles.downOther}>
-                            <img src="/static/images/app_down.png" width="80px" alt="" />
+                            <img src={`${staticPath}/images/app_down.png`} width="80px" alt="" />
                             手机网页版
                         </div>
                         <div className={styles.downOther}>
-                            <img src="/static/images/app_down.png" width="80px" alt="" />
+                            <img src={`${staticPath}/images/app_down.png`} width="80px" alt="" />
                             微信小程序
                         </div>
                     </div>
