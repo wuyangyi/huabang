@@ -31,7 +31,9 @@ export const commonSlice = createSlice({
         //     state.typeAddressSchoolBean = action.payload.data;
         // },
         [fetchCircleType.fulfilled.type]: (state, action: PayloadAction<Res<Array<CircleTypeBean>>>) => {
-            state.circleType = action.payload.data;
+            if (action.payload.status == 1) {
+                state.circleType = action.payload.data;
+            }
         },
     },
 });

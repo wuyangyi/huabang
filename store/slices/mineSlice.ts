@@ -52,13 +52,29 @@ export const mineSlice = createSlice({
     },
     extraReducers: {
         [fetchUserInfo.fulfilled.type]: (state, action: PayloadAction<Res<UserBean>>) => {
-            state.userInfo = action.payload.data;
+            if (action.payload.status == 1) {
+                state.userInfo = action.payload.data;
+            }
         },
         [fetchMineRecommendCircleList.fulfilled.type]: (state, action: PayloadAction<Res<ListPageBean<CircleBean>>>) => {
-            state.recommendCircleData = action.payload.data;
+            if (action.payload.status == 1) {
+                state.recommendCircleData = action.payload.data;
+            } else {
+                state.recommendCircleData = {
+                    total: 0,
+                    list: []
+                }
+            }
         },
         [fetchMineHelperList.fulfilled.type]: (state, action: PayloadAction<Res<ListPageBean<HelperItemData>>>) => {
-            state.mineHelperData = action.payload.data;
+            if (action.payload.status == 1) {
+                state.mineHelperData = action.payload.data;
+            } else {
+                state.mineHelperData = {
+                    total: 0,
+                    list: []
+                }
+            }
         },
     }
 });

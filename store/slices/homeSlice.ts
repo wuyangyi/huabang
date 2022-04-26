@@ -50,22 +50,27 @@ export const homeSlice = createSlice({
 
     },
     [fetchLikeList.fulfilled.type]: (state, action: PayloadAction<Res<HelperItemData[]>>) => {
-      state.likeData = action.payload.data || [];
-      console.log("fetchLikeList", action.payload.data ? action.payload.data.length : 0);
+      if (action.payload.status == 1) {
+        state.likeData = action.payload.data || [];
+        console.log("fetchLikeList", action.payload.data ? action.payload.data.length : 0);
+      }
     },
     [fetchNearbyList.fulfilled.type]: (state, action: PayloadAction<Res<HelperItemData[]>>) => {
-      state.nearbyData = action.payload.data || [];
-      console.log("fetchNearbyList", action.payload.data ? action.payload.data.length : 0);
+      if (action.payload.status == 1) {
+        state.nearbyData = action.payload.data || [];
+        console.log("fetchNearbyList", action.payload.data ? action.payload.data.length : 0);
+      }
     },
     [fetchHortList.fulfilled.type]: (state, action: PayloadAction<Res<HelperItemData[]>>) => {
-      state.hortData = action.payload.data || [];
-      console.log("fetchHortList", action.payload.data ? action.payload.data.length : 0);
+      if (action.payload.status == 1) {
+        state.hortData = action.payload.data || [];
+        console.log("fetchHortList", action.payload.data ? action.payload.data.length : 0);
+      }
     },
     [fetchRecommendCircleList.fulfilled.type]: (state, action: PayloadAction<Res<ListPageBean<CircleBean>>>) => {
-      state.recommendCircleData = action.payload.data || {
-        total: 0,
-        list: []
-      };
+      if (action.payload.status == 1) {
+        state.recommendCircleData = action.payload.data;
+      }
     },
   },
 });
