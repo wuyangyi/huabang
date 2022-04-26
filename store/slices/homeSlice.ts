@@ -46,20 +46,20 @@ export const homeSlice = createSlice({
     [fetchRecommendList.fulfilled.type]: (state, action: PayloadAction<Res<Array<HelperItemData>>>) => {
       state.isLoad = true;
       state.recommendData = action.payload.data;
-      console.log("fetchRecommendList", action.payload.data.length);
+      console.log("fetchRecommendList", action.payload.data ? action.payload.data.length : 0);
 
     },
     [fetchLikeList.fulfilled.type]: (state, action: PayloadAction<Res<HelperItemData[]>>) => {
       state.likeData = action.payload.data;
-      console.log("fetchLikeList", action.payload.data.length);
+      console.log("fetchLikeList", action.payload.data ? action.payload.data.length : 0);
     },
     [fetchNearbyList.fulfilled.type]: (state, action: PayloadAction<Res<HelperItemData[]>>) => {
       state.nearbyData = action.payload.data;
-      console.log("fetchNearbyList", action.payload.data.length);
+      console.log("fetchNearbyList", action.payload.data ? action.payload.data.length : 0);
     },
     [fetchHortList.fulfilled.type]: (state, action: PayloadAction<Res<HelperItemData[]>>) => {
       state.hortData = action.payload.data;
-      console.log("fetchHortList", action.payload.data.length);
+      console.log("fetchHortList", action.payload.data ? action.payload.data.length : 0);
     },
     [fetchRecommendCircleList.fulfilled.type]: (state, action: PayloadAction<Res<ListPageBean<CircleBean>>>) => {
       state.recommendCircleData = action.payload.data;
